@@ -10,19 +10,21 @@ from numpy import empty, reshape
 def main():
     m = mandelbrot()
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
-    width = 300
-    height = 600
-    limit = 255
-    minx = -2.23
-    miny = -1.15
-    maxx = 0.83
-    maxy = 1.15
-    fut_image = m.main(width, height, limit, minx, miny, maxx, maxy).get()
-    image = empty((height, width, 3))
+    params = \
+        { "width": 450
+        , "height": 900
+        , "limit": 255
+        , "minX": -2.23
+        , "minY": -1.15
+        , "maxX": 0.83
+        , "maxY": 1.15
+        }
+    fut_image = m.main(*params.values()).get()
+    image = empty((params["height"], params["width"], 3))
     image[:, :, 0] = (fut_image & 0xFF0000) >> 16
     image[:, :, 1] = (fut_image & 0xFF00) >> 8
     image[:, :, 2] = (fut_image & 0xFF)
-    image = reshape(image, (height, width * 3))
+    image = reshape(image, (params["height"], params["width"] * 3))
     imsave(filename, image)
 
 

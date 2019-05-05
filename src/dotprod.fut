@@ -24,5 +24,5 @@ module F32 = M {
     let zero: t = 0
 }
 
-entry dotprod_i32 = I32.dotprod
-entry dotprod_f32 = F32.dotprod
+entry dotprodI32 = I32.dotprod
+entry dotprodF32 = F32.dotprod
