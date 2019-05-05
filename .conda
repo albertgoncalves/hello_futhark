@@ -12,7 +12,7 @@ if (( ! $? == 0 )); then
 fi
 
 if [ ! $(uname -s) = "Darwin" ]; then
-    ln -f -s /etc/OpenCL/vendors ~/miniconda3/envs/pycl/etc/OpenCL/vendors
+    ln -f -s /etc/OpenCL/vendors ~/miniconda3/envs/$env/etc/OpenCL/vendors
 fi
 
-conda activate pycl
+conda activate $env

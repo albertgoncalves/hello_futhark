@@ -1,5 +1,8 @@
 *
 !.gitignore
+!README.md
+!out/
+!out/mandelbrot.png
 !shell.nix
 !.conda
 !.shellhook

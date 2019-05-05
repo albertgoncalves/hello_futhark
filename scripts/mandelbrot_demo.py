@@ -11,8 +11,8 @@ def main():
     m = mandelbrot()
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
     params = \
-        { "width": 450
-        , "height": 900
+        { "width": 150
+        , "height": 300
         , "limit": 255
         , "minX": -2.23
         , "minY": -1.15
