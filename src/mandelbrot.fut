@@ -1,6 +1,6 @@
 let dot(c: (f32, f32)): f32 =
     let (r, i) = c in
-    r * r + i * i
+    (r * r) + (i * i)
 
 let multComplex(x: (f32, f32), y: (f32, f32)): (f32, f32) =
     let (a, b) = x
@@ -30,8 +30,8 @@ let mandelbrot( screenX: i32
     let sizey = ymax - ymin
     let f (x: i32) (y: i32): i32 =
         let c0 =
-            ( xmin + ((f32.i32 x) * sizex) / (f32.i32 screenX)
-            , ymin + ((f32.i32 y) * sizey) / (f32.i32 screenY)
+            ( xmin + (((r32 x) * sizex) / (r32 screenX))
+            , ymin + (((r32 y) * sizey) / (r32 screenY))
             ) in
         divergence(depth, c0) in
     map (\y -> (map (\x -> f x y) (iota screenX))) (iota screenY)
@@ -57,5 +57,5 @@ let main
     : [screenY][screenX]i32 =
     let escapes =
         mandelbrot(screenX, screenY, depth, xmin, ymin, xmax, ymax) in
-    let f x = escapeToColour (depth, x) in
+    let f (x: i32): i32 = escapeToColour (depth, x) in
     map (\(row: []i32): [screenX]i32 -> map f row) escapes
