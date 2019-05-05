@@ -1,0 +1,11 @@
+*
+!.gitignore
+!main
+!shell
+!.conda
+!.shellhook
+!*.nix
+!*.fut
+!main.py
+!src/
+!scripts/

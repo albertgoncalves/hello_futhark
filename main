@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd src/
+futhark pyopencl --library dotprod.fut
+python $WD/scripts/main.py

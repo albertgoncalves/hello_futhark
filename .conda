@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+. ~/miniconda3/etc/profile.d/conda.sh
+
+env=pycl
+conda env list | grep $env >/dev/null
+if (( ! $? == 0 )); then
+    conda create \
+        -n $env \
+        -c conda-forge \
+        python=3.7 pyopencl numpy flake8
+fi
+
+conda activate pycl
