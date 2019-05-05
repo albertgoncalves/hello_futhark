@@ -44,7 +44,7 @@ let escapeToColour(depth: i32, divergence: i32): i32 =
         let r = 3 * divergence
         let g = 5 * divergence
         let b = 7 * divergence in
-        (r<<16 | g<<8 | b)
+        ((r << 16) | (g << 8) | b)
 
 let main
     (screenX: i32)
