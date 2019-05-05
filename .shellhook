@@ -11,6 +11,12 @@ if [ ! -d out/ ]; then
     mkdir out
 fi
 
+if [ ! -d lib/github.com/diku-dk/cpprandom/ ]; then
+    futhark pkg add github.com/diku-dk/cpprandom
+fi
+
+futhark pkg sync
+
 export WD=$(pwd)
 export PYTHONPATH="${PYTHONPATH}:$WD/src"
 export PYOPENCL_COMPILER_OUTPUT=0
