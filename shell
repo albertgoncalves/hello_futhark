@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-if [ $(uname -s) = "Darwin" ]; then
-    nix-shell darwin.nix
-else
-    nix-shell linux.nix
-fi

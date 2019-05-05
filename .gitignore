@@ -1,11 +1,9 @@
 *
 !.gitignore
-!main
-!shell
+!shell.nix
 !.conda
 !.shellhook
-!*.nix
 !*.fut
-!main.py
+!main
 !src/
-!scripts/
+!scripts/main.py
