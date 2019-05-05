@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
 from dotprod import dotprod
-from numpy import array, int32
+from numpy import array, float32, int32
 
 
 def main():
-    f = dotprod()
-    x = array([1, 2, 3], dtype=int32)
-    y = array([4, 5, 6], dtype=int32)
-    print(f.main(x, y))
+    o = dotprod()
+    x = [1.25, 2.5, 3.75]
+    y = [4.25, 5.5, 6.75]
+    for (f, t) in [(o.dotprod_i32, int32), (o.dotprod_f32, float32)]:
+        print(f(array(x, dtype=t), array(y, dtype=t)))
 
 
 if __name__ == "__main__":
