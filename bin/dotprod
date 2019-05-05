@@ -4,4 +4,4 @@ set -e
 
 cd src/
 futhark pyopencl --library dotprod.fut
-python -W ignore $WD/scripts/main.py
+python -W ignore $WD/scripts/dotprod_demo.py

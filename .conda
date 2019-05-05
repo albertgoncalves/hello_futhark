@@ -8,7 +8,7 @@ if (( ! $? == 0 )); then
     conda create \
         -n $env \
         -c conda-forge \
-        python=3.7 pyopencl numpy flake8
+        python=3.7 flake8 matplotlib numpy pyopencl
 fi
 
 if [ ! $(uname -s) = "Darwin" ]; then

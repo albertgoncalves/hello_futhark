@@ -2,9 +2,13 @@
 
 if [ $(uname -s) = "Darwin" ]; then
     alias ls="ls --color=auto"
-    alias ll="ls -al"
+    alias ll="ls -l"
 else
     alias open="xdg-open"
+fi
+
+if [ ! -d out/ ]; then
+    mkdir out
 fi
 
 export WD=$(pwd)

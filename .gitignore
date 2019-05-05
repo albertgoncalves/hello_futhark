@@ -4,6 +4,9 @@
 !.conda
 !.shellhook
 !*.fut
-!main
+!*_demo.py
+!dotprod
+!mandelbrot
+!bin/
 !src/
-!scripts/main.py
+!scripts/
