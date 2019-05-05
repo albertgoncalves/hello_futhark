@@ -29,5 +29,5 @@ $ nix-shell
 [nix-shell:path/to/hello_futhark]$ bin/mandelbrot && open out/mandelbrot.png
 ```
 <p align="center">
-    <img width="450" height="300" src="out/mandelbrot.png">
+    <img width="450" height="300" src="cover.png">
 </p>
