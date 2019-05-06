@@ -1,15 +1,10 @@
-let dot (c: (f32, f32)): f32 =
-    let (r, i) = c in
+let dot (r: f32, i: f32): f32 =
     (r * r) + (i * i)
 
-let mulComplex (x: (f32, f32)) (y: (f32, f32)): (f32, f32) =
-    let (a, b) = x
-    let (c, d) = y in
+let mulComplex (a: f32, b: f32) (c: f32, d: f32): (f32, f32) =
     ((a * c) - (b * d), (a * d) + (b * c))
 
-let addComplex (x: (f32, f32)) (y: (f32, f32)): (f32, f32) =
-    let (a, b) = x
-    let (c, d) = y in
+let addComplex (a: f32, b: f32) (c: f32, d: f32): (f32, f32) =
     (a + c, b + d)
 
 let divergence (depth: i32, c0: (f32, f32)): i32 =
