@@ -10,9 +10,10 @@ from numpy import empty, reshape
 def main():
     m = mandelbrot()
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
+    scale = 3
     params = \
-        { "width": 150
-        , "height": 300
+        { "width": 150 * scale
+        , "height": 300 * scale
         , "limit": 255
         , "minX": -2.23
         , "minY": -1.15
