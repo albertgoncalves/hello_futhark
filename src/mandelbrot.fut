@@ -14,7 +14,7 @@ let divergence (depth: i32, c0: (f32, f32)): i32 =
     i
 
 let mandelbrot (screenX: i32) (screenY: i32) (depth: i32) (xmin: f32)
-        (ymin: f32) (xmax: f32) (ymax: f32) : [screenY][screenX]i32 =
+        (ymin: f32) (xmax: f32) (ymax: f32): [screenY][screenX]i32 =
     let sizeX = xmax - xmin
     let sizeY = ymax - ymin
     let f (x: i32) (y: i32): i32 =
@@ -37,7 +37,7 @@ let escapeToColour (depth: i32) (divergence: i32): i32 =
         ((r << 16) | (g << 8) | b)
 
 let main (screenX: i32) (screenY: i32) (depth: i32) (xmin: f32) (ymin: f32)
-        (xmax: f32) (ymax: f32) : [screenY][screenX]i32 =
+        (xmax: f32) (ymax: f32): [screenY][screenX]i32 =
     map
         (\(row: [screenX]i32): [screenX]i32 -> map (escapeToColour depth) row)
         (mandelbrot screenX screenY depth xmin ymin xmax ymax)
