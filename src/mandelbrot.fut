@@ -39,5 +39,5 @@ let escapeToColour (depth: i32) (divergence: i32): i32 =
 let main (screenX: i32) (screenY: i32) (depth: i32) (xmin: f32) (ymin: f32)
         (xmax: f32) (ymax: f32) : [screenY][screenX]i32 =
     map
-        (\(row: [screenY]i32): [screenX]i32 -> map (escapeToColour depth) row)
+        (\(row: [screenX]i32): [screenX]i32 -> map (escapeToColour depth) row)
         (mandelbrot screenX screenY depth xmin ymin xmax ymax)
