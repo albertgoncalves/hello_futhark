@@ -11,7 +11,7 @@ To get going
 ---
 Unless you already have a `conda env` named `pycl`, simply entering the development environment with `$ nix-shell` should handle all the various dependencies. You should get a prompt from `conda` regarding `Python` package installation along the way.
 
-If you _do_ have a `conda env` with such a name, and would rather not harm be done to it, head over to `.conda` and set `env=...` to whatever works best.
+If you _do_ have a `conda env` with such a name (and would prefer to keep it the way it is), head over to `.conda` and set `env=...` to whatever works best.
 
 If everything went according to plan
 ---
