@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from os import environ
+from sys import argv
 
 from mandelbrot import mandelbrot
 from imageio import imwrite
@@ -8,9 +9,12 @@ from numpy import empty, uint8, reshape
 
 
 def main():
+    try:
+        scale = int(argv[1])
+    except:
+        scale = 3
     m = mandelbrot()
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
-    scale = 3
     params = \
         { "width": int(150 * scale)
         , "height": int(300 * scale)

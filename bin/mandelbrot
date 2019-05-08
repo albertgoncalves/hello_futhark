@@ -4,4 +4,4 @@ set -e
 
 cd src/
 futhark pyopencl --library mandelbrot.fut
-python -W ignore $WD/scripts/mandelbrot_demo.py
+python -W ignore $WD/scripts/mandelbrot_demo.py $1
