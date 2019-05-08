@@ -4,7 +4,6 @@ Home for a few working examples of `Futhark` via `Python`.
 
 Needed things
 ---
- * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
  * [Nix](https://nixos.org/nix/)
 
 To get going
