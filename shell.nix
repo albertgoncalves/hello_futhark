@@ -4,6 +4,9 @@ with pkgs; mkShell {
     buildInputs = [
         futhark
         glibcLocales
+        (python37.withPackages(ps: with ps; [
+            conda
+        ]))
     ];
     shellHook = ''
         . .conda

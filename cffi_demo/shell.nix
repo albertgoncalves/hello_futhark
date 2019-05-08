@@ -8,8 +8,10 @@ with pkgs; mkShell {
             cffi
             flake8
             imageio
-            pip
         ]))
+        opencl-headers_1_2
+        ocl-icd-oclh_1_2
+        opencl-info
     ];
     shellHook = ''
         . .shellhook
