@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+from futhark_ffi import build
+
+
+def main():
+    build.main()
+
+
+if __name__ == "__main__":
+    main()
