@@ -15,6 +15,10 @@ else
     alias open="xdg-open"
 fi
 
+if [ ! $(uname -s) = "Darwin" ]; then
+    ln -f -s /etc/OpenCL/vendors ~/miniconda3/envs/$env/etc/OpenCL/vendors
+fi
+
 export WD=$(pwd)
-export PYTHONPATH="${PYTHONPATH}:$WD/futhark-pycffi"
+export PYTHONPATH="${PYTHONPATH}:$WD/futhark-pycffi:$WD/src"
 alias flake8="flake8 --ignore E124,E128,E201,E203,E241,E402,W503,E722"
