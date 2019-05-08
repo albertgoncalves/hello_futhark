@@ -8,11 +8,16 @@ if (( ! $? == 0 )); then
     conda create \
         -n $env \
         -c conda-forge \
-        python=3.7 cffi flake8 imageio numpy pyopencl
+        python=3.7 cffi flake8 imageio numpy pocl pyopencl
+    # if [ ! $(uname -s) = "Darwin" ]; then
+    #     ln -f -s \
+    #         /etc/OpenCL/vendors \
+    #         ~/miniconda3/envs/$env/etc/OpenCL/vendors
+    # fi
+else
+    echo "Looks like $env already exists."
+    echo "See ./.conda if you're not sure what's going on."
 fi
 
-# if [ ! $(uname -s) = "Darwin" ]; then
-#     ln -f -s /etc/OpenCL/vendors ~/miniconda3/envs/$env/etc/OpenCL/vendors
-# fi
 
 conda activate $env
