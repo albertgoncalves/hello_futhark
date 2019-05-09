@@ -7,10 +7,10 @@
 !env.yml
 !.shellhook
 !*.fut
-!*_demo.py
+!*_.py
 !dotprod
 !mandelbrot
-!entries
+!toys
 !bin/
 !src/
 !scripts/

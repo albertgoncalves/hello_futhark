@@ -38,7 +38,7 @@ def main():
     image[:, :, 1] = (y & 0xFF00) >> 8
     image[:, :, 2] = (y & 0xFF)
     image = \
-        timer(lambda : reshape(image, (xs["height"], xs["width"] * 3))
+        timer( lambda : reshape(image, (xs["height"], xs["width"] * 3))
              , "reshape(...)"
              )
     timer(lambda: imwrite(filename, image), "imwrite(...)")

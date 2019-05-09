@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-from entries import entries
+from toys import toys
 from numpy import arange, float32, int8, int32, uint64
 
 
 def main():
-    f = entries()
+    f = toys()
     xs = \
         [ f.test1(float32(5))
         , f.test2(arange(5, dtype=int32))
