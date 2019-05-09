@@ -13,14 +13,11 @@ entry test4 (a:f32) (b:f32) : (f32, f32) =
 entry test5 (a:[][]u64) : [][]u64 =
     map (map (*2)) a
 
-entry test6 (a:i8) : [](i8, i8) =
-    map (\x -> (x, -x)) <| i8.iota a
+entry test6 (a:i8) : ([]i8, []i8) =
+    i8.iota a |> map (\x -> (x, -x)) |> unzip
 
-entry test7 (a: [](i8, i8)) : ([]i8, []i8) =
-    unzip a
-
-entry test8 (x: bool): bool =
+entry test7 (x: bool): bool =
     !x
 
-entry test9 (a: [5]i32): i32 =
+entry test8 (a: [5]i32): i32 =
     reduce (+) 0 a

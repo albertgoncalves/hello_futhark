@@ -13,6 +13,3 @@
 !bin/
 !src/
 !scripts/
-!cffi_demo/
-!cffi_demo/scripts/build
-!cffi_demo/scripts/test
