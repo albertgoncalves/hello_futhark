@@ -8,7 +8,7 @@ Needed things
 
 To get going
 ---
-Unless you already have a `conda env` named `pycl`, simply entering the development environment with `$ nix-shell` should handle all the various dependencies. You should get a prompt from `conda` regarding `Python` package installation along the way.
+Unless you already have a `conda env` named `futhark`, simply entering the development environment with `$ nix-shell` should handle all the various dependencies. You should get some messages from `conda` regarding package installation along the way.
 
 If you _do_ have a `conda env` with such a name (and would prefer to keep it the way it is), head over to `.conda` and set `env=...` to whatever works best.
 
@@ -18,13 +18,13 @@ If everything went according to plan
 $ nix-shell
 ```
 ```
-(pycl)
+(futhark)
 [nix-shell:path/to/hello_futhark]$ bin/dotprod
 32
 44.375
 ```
 ```
-(pycl)
+(futhark)
 [nix-shell:path/to/hello_futhark]$ bin/mandelbrot && open out/mandelbrot.png
 ```
 <p align="center">

@@ -2,22 +2,11 @@
 
 . ~/miniconda3/etc/profile.d/conda.sh
 
-env=pycl
+env=futhark
 conda env list | grep $env >/dev/null
 if (( ! $? == 0 )); then
-    conda create \
-        -n $env \
-        -c conda-forge \
-        python=3.7 cffi flake8 imageio numpy pocl pyopencl
-    # if [ ! $(uname -s) = "Darwin" ]; then
-    #     ln -f -s \
-    #         /etc/OpenCL/vendors \
-    #         ~/miniconda3/envs/$env/etc/OpenCL/vendors
-    # fi
+    conda env create -f env.yml -n $env
 else
-    echo "Looks like $env already exists."
-    echo "See ./.conda if you're not sure what's going on."
+    conda env update -f env.yml -n $env
 fi
-
-
 conda activate $env

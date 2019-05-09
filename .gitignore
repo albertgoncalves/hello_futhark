@@ -4,6 +4,7 @@
 !cover.png
 !shell.nix
 !.conda
+!env.yml
 !.shellhook
 !*.fut
 !*_demo.py
