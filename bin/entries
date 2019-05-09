@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd src/
+futhark pyopencl --library entries.fut
+python -W ignore $WD/scripts/entries_demo.py
