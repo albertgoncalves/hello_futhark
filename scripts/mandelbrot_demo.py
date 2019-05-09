@@ -13,7 +13,7 @@ def main():
         scale = int(argv[1])
     except:
         scale = 3
-    m = mandelbrot()
+    f = mandelbrot()
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
     params = \
         { "width": int(150 * scale)
@@ -24,7 +24,7 @@ def main():
         , "maxX": 0.83
         , "maxY": 1.15
         }
-    fut_image = m.main(*params.values()).get()
+    fut_image = f.main(*params.values()).get()
     image = empty((params["height"], params["width"], 3), dtype=uint8)
     image[:, :, 0] = (fut_image & 0xFF0000) >> 16
     image[:, :, 1] = (fut_image & 0xFF00) >> 8
