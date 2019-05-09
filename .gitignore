@@ -3,8 +3,9 @@
 !README.md
 !cover.png
 !shell.nix
-!.conda
 !env.yml
+!.conda
+!.pkg
 !.shellhook
 !*.fut
 !*_.py

@@ -10,6 +10,7 @@ with pkgs; mkShell {
     ];
     shellHook = ''
         . .conda
+        . .pkg
         . .shellhook
     '';
 }
