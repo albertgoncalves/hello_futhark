@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-. ~/miniconda3/etc/profile.d/conda.sh
+# shellcheck source=/dev/null
+. "$HOME/miniconda3/etc/profile.d/conda.sh"
 
 env=futhark
-conda env list | grep $env >/dev/null
-if (( ! $? == 0 )); then
+if ! conda env list | grep $env >/dev/null; then
     conda env create -f env.yml -n $env
 fi
 conda activate $env

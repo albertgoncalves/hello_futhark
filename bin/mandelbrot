@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-set -e
+set -eu
 
-cd src/
+cd "$WD/src"
 futhark pyopencl --library mandelbrot.fut
-python -W ignore $WD/scripts/mandelbrot_.py $1
+
+set +u
+python -W ignore "$WD/scripts/mandelbrot_.py" $1

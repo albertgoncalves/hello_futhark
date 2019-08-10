@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-set -e
+set -eu
 
-cd src/
+cd "$WD/src"
 futhark pyopencl --library toys.fut
-python -W ignore $WD/scripts/toys_.py
+python -W ignore "$WD/scripts/toys_.py"

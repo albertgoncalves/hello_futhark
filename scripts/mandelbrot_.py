@@ -22,25 +22,25 @@ def main():
     except:
         scale = 3
     filename = "{}/out/mandelbrot.png".format(environ["WD"])
-    xs = \
-        { "width": int(150 * scale)
-        , "height": int(300 * scale)
-        , "limit": 255
-        , "minX": -2.23
-        , "minY": -1.15
-        , "maxX": 0.83
-        , "maxY": 1.15
-        }
+    xs = {
+        "width": int(150 * scale),
+        "height": int(300 * scale),
+        "limit": 255,
+        "minX": -2.23,
+        "minY": -1.15,
+        "maxX": 0.83,
+        "maxY": 1.15,
+    }
     f = timer(lambda: mandelbrot(), "mandelbrot()")
     y = timer(lambda: f.main(*xs.values()).get(), "f.main(...).get()")
     image = empty((xs["height"], xs["width"], 3), dtype=uint8)
     image[:, :, 0] = (y & 0xFF0000) >> 16
     image[:, :, 1] = (y & 0xFF00) >> 8
     image[:, :, 2] = (y & 0xFF)
-    image = \
-        timer( lambda : reshape(image, (xs["height"], xs["width"] * 3))
-             , "reshape(...)"
-             )
+    image = timer(
+        lambda: reshape(image, (xs["height"], xs["width"] * 3)),
+        "reshape(...)",
+    )
     timer(lambda: imwrite(filename, image), "imwrite(...)")
 
 

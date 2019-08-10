@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ $(uname -s) = "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     alias ls="ls --color=auto"
     alias ll="ls -l"
 else
@@ -11,12 +11,14 @@ if [ ! -d out/ ]; then
     mkdir out
 fi
 
-export WD=$(pwd)
-if [ ! -z $PYTHONPATH ]; then
+export WD
+WD=$(pwd)
+
+if [ -n "$PYTHONPATH" ]; then
     export PYTHONPATH="$WD/src:${PYTHONPATH}"
 else
     export PYTHONPATH="$WD/src"
 fi
 
 export PYOPENCL_COMPILER_OUTPUT=0
-alias flake8="flake8 --ignore E124,E128,E201,E203,E241,E402,W503,E722"
+alias flake8="flake8 --ignore E722"
